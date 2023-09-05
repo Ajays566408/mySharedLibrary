@@ -1,6 +1,6 @@
 def gitDownload(repo)
 {
-  git 'https://github.com/Ajays566408/${repo}.git'
+  git "https://github.com/Ajays566408/${repo}.git"
 }
 def newBuild()
 {
@@ -8,9 +8,9 @@ def newBuild()
 }
 def newDeployment(jobname,ip,appname)
 {
-  sh 'scp /home/ubuntu/.jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ip}:/var/lib/tomcat9/webapps/${appname}.war'
+  sh "scp /home/ubuntu/.jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ip}:/var/lib/tomcat9/webapps/${appname}.war"
 }
 def runSelenium(jobname)
 {
-  sh 'java -jar /home/ubuntu/.jenkins/workspace/${jobname}/testing.jar'
+  sh "java -jar /home/ubuntu/.jenkins/workspace/${jobname}/testing.jar"
 }
